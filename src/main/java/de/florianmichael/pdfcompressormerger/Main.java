@@ -58,7 +58,6 @@ public final class Main {
                 // Render page as image with better DPI (150–200)
                 final BufferedImage bim = renderer.renderImageWithDPI(i, 180);
 
-                // Save as JPEG with compression quality ~0.8
                 final File tempImg = new File("page_" + i + ".jpg");
                 ImageIO.write(bim, "jpg", tempImg);
 
@@ -82,7 +81,7 @@ public final class Main {
             }
 
             compressed.save(outputFile);
-            System.out.println("PDFs merged, scaled to A4, and compressed with better quality -> " + outputFile);
+            System.out.println("PDFs merged, scaled to A4 -> " + outputFile);
         }
 
         new File("merged_temp.pdf").delete();
